@@ -1,0 +1,483 @@
+/*
+Theme Name: UnderStrap
+Theme URI: https://understrap.com
+Author: the Understrap Authors
+Author URI: https://github.com/understrap/understrap/graphs/contributors
+GitHub Theme URI: https://github.com/understrap/understrap
+Description: Combination of Automattic´s _s theme and Bootstrap 4. Made as a solid starting point for your next theme project and WordPress website. Use it as starter theme or as a parent theme. It is up to you. Including Font Awesome support, built-in widget slider and much more you need for basic websites. IMPORTANT: All developer dependencies are not bundled with this install file. Just download the .zip, extract it and run "npm install" and "gulp copy-assets" inside the extracted /understrap folder.
+That downloads everything and moves it in place so that you can recompile your CSS and JS files;
+A developer version (with Gulp/node and Sass sources) is available on gitHub: https://github.com/understrap/understrap
+A child theme is available on Github, too: https://github.com/understrap/understrap-child;
+Version: 0.9.5
+Tested up to: 5.7.2
+Requires PHP: 5.2
+License: UnderStrap WordPress Theme, Copyright 2013-2021 Howard Development & Consulting
+UnderStrap is distributed under the terms of the GNU GPL version 2
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: understrap
+Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+UnderStrap is based on Underscores https://underscores.me/, (C) 2012-2016 Automattic, Inc.
+
+Resource Licenses:
+Font Awesome: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Bootstrap: https://getbootstrap.com | https://github.com/twbs/bootstrap/blob/master/LICENSE (Code licensed under MIT, documentation under CC BY 3.0.)
+and of course
+jQuery: https://jquery.org | (Code licensed under MIT)
+WP Bootstrap Navwalker by Edward McIntyre: https://github.com/twittem/wp-bootstrap-navwalker | GNU GPL
+*/
+
+/*
+This file is just used to identify the theme in WordPress.
+The compiled CSS output can be found in /css/theme.css
+The SASS sources for it can be found in /sass/
+The dependencies can be found in /src/ after running "gulp copy-assets" terminal command
+
+...and now go out and play!
+*/
+/*//////////Basic////////////////*/
+body {
+    font-size: 16px;
+    line-height: 18px;
+    background-color: #f7f8fa;
+}
+
+.container-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container-wrapper {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-wrapper {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1420px) {
+    .container-wrapper {
+        width: 1420px;
+    }
+}
+
+/*//////////Main nav////////////////*/
+nav#main-nav {
+    background-color: #191919 !important;
+}
+
+ul#main-menu {
+    padding-left: 10px;
+}
+
+ul#main-menu li a {
+    padding: 5px 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
+    background-color: rgb(255 255 255 / 30%);
+    border-radius: 5px;
+}
+
+/*//////////Restaurants////////////////*/
+
+section.restaurants {
+    padding-top: 35px;
+}
+
+h3.restaurants__title {
+    font-size: 26px;
+    line-height: 28px;
+}
+
+ul.restaurants__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    margin-top: 25px;
+}
+
+ul.restaurants__list li {
+    list-style: none;
+}
+
+ul.restaurants__list li a {
+    padding: 4px 6px;
+    text-transform: uppercase;
+    color: #52575d;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+ul.restaurants__list li.active a {
+    background-color: #6c7481;
+    color: #fff;
+    border: 1px solid #595e6c;
+    border-radius: 5px;
+}
+
+ul.restaurants__list li a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.restaurants__search input[type="submit"] {
+    background: transparent;
+    position: relative;
+    display: inline-block;
+    float: none;
+    z-index: 30;
+    font-size: 13px;
+    line-height: 1.84615384;
+    text-indent: 0;
+    height: 24px;
+    width: 24px;
+    max-width: none;
+    padding: 0 3px 0 28px;
+    margin: 0;
+    color: #c3c4c7;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-duration: .4s;
+    -o-transition-duration: .4s;
+    transition-duration: .4s;
+    -webkit-transition-property: width, background;
+    -o-transition-property: width, background;
+    transition-property: width, background;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+
+.restaurants__search {
+    position: relative;
+    max-width: 190px;
+    background: #fff;
+    border: 1px solid #eaebed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    min-height: 38px;
+    border-radius: 5px;
+}
+
+.restaurants__search:before {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 6px;
+    width: 24px;
+    height: 24px;
+    display: block;
+    font: normal 20px/1 dashicons !important;
+    content: "\f179";
+    color: #55565b;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.restaurants__search input[type="text"] {
+    border: none;
+    max-width: calc(100% - 31px);
+}
+
+.restaurants__search input[type="text"]::-webkit-input-placeholder { /* Edge */
+    color: #55565b;
+}
+
+.restaurants__search input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #55565b;
+}
+
+.restaurants__search input[type="text"]::-moz-placeholder {
+    color: #55565b;
+}
+
+.restaurants__search input[type="text"]::-ms-input-placeholder {
+    color: #55565b;
+}
+
+.restaurants__search input[type="text"]::placeholder {
+    color: #55565b;
+}
+
+.restaurants__search input[type="text"]:focus-visible {
+    outline: none;
+}
+
+table.restaurants__table {
+    display: table;
+    width: 100% !important;
+    /* table-layout: fixed !important; */
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0 !important;
+    margin-bottom: 0;
+    line-height: 24px;
+    background: #fff;
+    border: 1px solid #eaebee;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+table.restaurants__table caption {
+    caption-side: top;
+    color: #5f5f5f;
+    text-align: center;
+    font-weight: bold;
+}
+
+table.restaurants__table tr {
+    padding: 5px;
+    border-bottom: 1px solid #eaebee;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+table.restaurants__table tr.restaurants__card:hover {
+    background-color: #fff;
+    -webkit-transform: scaleX(1.05);
+    -ms-transform: scaleX(1.05);
+    transform: scaleX(1.05);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-box-shadow: 0 0 20px 1px rgb(0 0 0 / 50%);
+    box-shadow: 0 0 20px 1px rgb(0 0 0 / 50%);
+}
+
+table.restaurants__table tr:hover a {
+    /*color: #fff;*/
+    border-bottom: 1px dashed #fff;
+}
+
+table.restaurants__table th,
+table.restaurants__table td {
+    padding: 8px;
+    text-align: left;
+}
+
+table.restaurants__table th {
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border: 0px !important;
+    text-transform: uppercase;
+    color: #9a9a9b;
+    text-align: left;
+}
+
+table.restaurants__table td {
+    border-bottom: 1px solid #ededed !important;
+    border-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    font-size: 14px;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+table.restaurants__table td:first-child {
+    /* text-align: left; */
+}
+
+table.restaurants__table td.justify_text {
+    text-align: justify;
+}
+
+table.restaurants__table td.left_text {
+    text-align: left;
+}
+
+table.restaurants__table td.right_text {
+    text-align: right;
+}
+
+table.restaurants__table tr.subhead {
+    background: #f1f7f7;
+    font-weight: bold;
+}
+
+table.restaurants__table tr.subhead:hover {
+    background: #24c5c5;
+    color: #fff;
+}
+
+tr.restaurants__card a.verified {
+    background-color: #66cea7;
+    color: #fff;
+}
+
+tr.restaurants__card a.pending {
+    background-color: #faa11f;
+    color: #fff;
+}
+
+tr.restaurants__card a.ongoing {
+    background-color: #e4e6eb;
+    color: #5a5c61;
+}
+
+tr.restaurants__card img {
+    width: 25px;
+    height: auto;
+    border-radius: 5px;
+    margin: 0 5px 5px 0;
+}
+
+.restaurants__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+tr.restaurants__card td {
+    color: #252525;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+tr.restaurants__card a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.restaurants__item p {
+    white-space: nowrap;
+    margin: 0;
+}
+
+tr.restaurants__card a {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: auto;
+    padding: 0 5px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 15px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 25px;
+    text-transform: uppercase;
+}
+ul.pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    background: #fff;
+    padding: 15px;
+}
+div#primary ul.pagination {
+    margin: 0 15px;
+}
+
+.page-item.active .page-link {
+    background: #f2f2f2;
+    color: #000;
+    border: none;
+    border: 1px solid #ececec;
+}
+
+.page-link {
+    color: #a3a5a9;
+    border: 1px solid #ececec;
+    padding: 5px 10px;
+    line-height: 15px;
+    font-size: 13px;
+}
+@media screen and (max-width: 900px) {
+    table.restaurants__table {
+        border: 0 !important;
+    }
+
+    table.restaurants__table thead {
+        display: none;
+    }
+
+    table.restaurants__table tr {
+        margin-bottom: 10px;
+        display: block;
+        border: 1px solid #66686b !important;
+    }
+
+
+    table.restaurants__table td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dotted #ededed !important;
+    }
+
+    table.restaurants__table td.justify_text {
+        text-align: right;
+    }
+
+    table.restaurants__table td.left_text {
+        text-align: right;
+    }
+
+    table.restaurants__table td:first-child {
+        text-align: right;
+    }
+
+    table.restaurants__table td.right_text {
+        text-align: right;
+    }
+
+    table.restaurants__table td:last-child {
+        border-bottom: 0 !important;
+    }
+
+    table.restaurants__table td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+    .restaurants__item {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+}
